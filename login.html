@@ -1,17 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="so">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gelitaanka Maamulaha — MR.ducaysane</title>
+  <title>Gal Akoonkaaga — MR.ducaysane</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0A1F44">
+
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
+
 <body class="auth-body">
   <a class="skip-link" href="#main">U bood nuxurka</a>
 
@@ -24,14 +27,11 @@
           <span class="brand-tag">Aqoon Dijitaal ah, Mustaqbal Wanaagsan.</span>
         </span>
       </a>
+
       <nav class="nav-menu" aria-label="Liiska weyn">
         <ul class="nav-menu">
           <li><a href="/index.html">Bogga Hore</a></li>
-          <li><a href="/casharrada.html">Casharrada</a></li>
-          <li><a href="/imtixaannada.html">Imtixaannada</a></li>
-          <li><a href="/khayraadka.html">Khayraadka</a></li>
-          <li><a href="/nagu-saabsan.html">Nagu Saabsan</a></li>
-          <li><a href="/nala-soo-xiriir.html">Nala Soo Xiriir</a></li>
+          <li><a href="/register">Isdiiwaangeli</a></li>
         </ul>
       </nav>
     </div>
@@ -40,33 +40,64 @@
   <main id="main" class="auth-main">
     <section class="auth-wrap">
       <div class="auth-card">
-        <div class="auth-ico" aria-hidden="true"><span data-icon="lock"></span></div>
-        <span class="badge"><span data-icon="shield"></span> goob xiran (admin)</span>
-        <h1>Gelitaanka Maamulaha</h1>
-        <p class="auth-sub">Bogagga dadweynaha waa bilaash — furaha sirta ah kaliya ayaa loo baahan yahay dashboard-ka.</p>
+        <div class="auth-ico" aria-hidden="true">
+          <span data-icon="user"></span>
+        </div>
 
-        {{LOGIN_MESSAGE}}
+        <span class="badge">
+          <span data-icon="lock"></span> Akoonkaaga waxbarasho
+        </span>
 
-        <form method="post" action="/admin/login" class="auth-form" id="loginForm" novalidate>
+        <h1>Gal akoonkaaga</h1>
+        <p class="auth-sub">
+          Geli email-kaaga iyo furaha sirta ah si aad u sii wadato
+          waxbarashadaada MR.ducaysane.
+        </p>
+
+        {{USER_MESSAGE}}
+
+        <form method="post" action="/login" class="auth-form" id="userLoginForm">
           <input type="hidden" name="csrf_token" value="{{CSRF_TOKEN}}">
+
           <div class="form-group">
-            <label for="adminEmail">Email-ka Maamulaha <span class="req">*</span></label>
-            <input class="form-control" type="email" id="adminEmail" name="email"
-                   autocomplete="username" inputmode="email" required
-                   placeholder="magacaga@example.com">
+            <label for="userEmail">Email-kaaga <span class="req">*</span></label>
+            <input
+              class="form-control"
+              type="email"
+              id="userEmail"
+              name="email"
+              autocomplete="username"
+              inputmode="email"
+              required
+              placeholder="magacaga@example.com"
+              value="{{FILL_EMAIL}}">
           </div>
+
           <div class="form-group">
-            <label for="adminPassword">Furaha Sirta Ah <span class="req">*</span></label>
-            <input class="form-control" type="password" id="adminPassword" name="password"
-                   autocomplete="current-password" required placeholder="••••••••">
+            <label for="userPassword">Furaha sirta ah <span class="req">*</span></label>
+            <input
+              class="form-control"
+              type="password"
+              id="userPassword"
+              name="password"
+              autocomplete="current-password"
+              required
+              placeholder="Geli furaha sirta ah">
           </div>
+
           <button class="btn btn-primary btn-lg auth-submit" type="submit">
-            <span data-icon="lock"></span> Soo Gal
+            <span data-icon="lock"></span> Gal akoonka
           </button>
         </form>
 
-        <p class="auth-note"><span data-icon="info"></span> Akoon cusub ma dhisan tahay? <a href="/register">Isdiiwaangeli</a>. Wixii muran ah noogu soo dir <a href="/nala-soo-xiriir.html">bogga xiriirka</a>.</p>
-        <a class="auth-back" href="/index.html"><span data-icon="arrowRight"></span> Noo ku noqo bogga hore</a>
+        <p class="auth-note">
+          Akoon ma lihid?
+          <a href="/register">Isdiiwaangeli</a>.
+        </p>
+
+        <a class="auth-back" href="/index.html">
+          <span data-icon="arrowRight"></span> Ku noqo bogga hore
+        </a>
       </div>
     </section>
   </main>
@@ -76,13 +107,18 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="contact-actions">
-            <a class="btn-whatsapp" href="https://wa.me/252657155694" target="_blank" rel="noopener noreferrer" aria-label="Farriin WhatsApp noo dir +252 657155694">
+            <a class="btn-whatsapp"
+               href="https://wa.me/252657155694"
+               target="_blank"
+               rel="noopener noreferrer">
               <span data-icon="whatsapp"></span> WhatsApp
             </a>
-            <a class="btn-email" href="mailto:maxamedmustafe882@gmail.com" aria-label="Email noo dir maxamedmustafe882@gmail.com">
+
+            <a class="btn-email" href="mailto:maxamedmustafe882@gmail.com">
               <span data-icon="mail"></span> Email
             </a>
           </div>
+
           <h4>Nala Soo Xiriir</h4>
           <ul>
             <li>
@@ -102,6 +138,7 @@
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>© <span data-year>2026</span> MR.ducaysane. Dhammaan xuquuqaha waa la ilaaliyay.</p>
         <p class="tagline">Aqoon Dijitaal ah, Mustaqbal Wanaagsan.</p>
