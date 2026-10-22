@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MR.ducaysane">
+  <defs>
+    <linearGradient id="mdg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1F44"/>
+      <stop offset="0.55" stop-color="#123A7A"/>
+      <stop offset="1" stop-color="#1D6BF0"/>
+    </linearGradient>
+    <linearGradient id="mdgGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7DD3FC"/>
+      <stop offset="1" stop-color="#2E8BFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#mdg)"/>
+  <g fill="#FFFFFF" opacity="0.07">
+    <circle cx="12" cy="12" r="1.6"/><circle cx="32" cy="8" r="1.2"/><circle cx="54" cy="12" r="1.6"/>
+    <circle cx="8" cy="32" r="1.2"/><circle cx="58" cy="34" r="1.2"/>
+    <circle cx="12" cy="54" r="1.6"/><circle cx="52" cy="56" r="1.6"/>
+  </g>
+  <path d="M32 12.5 58 23.2 32 33.9 6 23.2Z" fill="#FFFFFF"/>
+  <path d="M17.5 27.6v9.1c0 1.6 6.5 4.6 14.5 4.6s14.5-3 14.5-4.6v-9.1L32 35.6 17.5 27.6Z" fill="#DCEBFF"/>
+  <path d="M52.5 25.2v8.4" stroke="url(#mdgGlow)" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+  <path d="M52.5 33.6c0 3.4-3.7 2.9-3.7 6.3" stroke="url(#mdgGlow)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <circle cx="48.8" cy="42.8" r="3.1" fill="#38BDF8"/>
+  <g stroke="#38BDF8" stroke-width="2" fill="none" opacity="0.9">
+    <path d="M14.5 47.5h7l4-4h5.5"/>
+  </g>
+  <circle cx="14.5" cy="47.5" r="2.4" fill="#7DD3FC"/>
+  <circle cx="31" cy="43.5" r="2.4" fill="#7DD3FC"/>
+</svg>

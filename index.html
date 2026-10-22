@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MR.ducaysane — Ku Baro Xirfadaha Dijitaalka ah Af-Soomaali</title>
+  <meta name="description" content="Baro computer-ka, internet-ka, web design iyo xirfadaha ICT adigoo adeegsanaya casharro Af-Soomaali fudud ku qoran. Bilaash.">
+  <meta name="theme-color" content="#0A1F44">
+  <meta property="og:title" content="MR.ducaysane — Aqoon Dijitaal ah, Mustaqbal Wanaagsan.">
+  <meta property="og:description" content="Manba waxbarasho oo bilaash oo Af-Soomaali: computer, internet, badbaado, HTML, CSS iyo JavaScript.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">U bood nuxurka</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="MR.ducaysane — Bogga Hore">
+        <img src="assets/img/logo-mark.svg" alt="" width="44" height="44">
+        <span>
+          <span class="brand-name">MR.<span class="accent">ducaysane</span></span>
+          <span class="brand-tag">Aqoon Dijitaal ah, Mustaqbal Wanaagsan.</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Fur liiska">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Liiska weyn">
+        <ul class="nav-menu">
+          <li><a href="index.html">Bogga Hore</a></li>
+          <li><a href="casharrada.html">Casharrada</a></li>
+          <li><a href="imtixaannada.html">Imtixaannada</a></li>
+          <li><a href="khayraadka.html">Khayraadka</a></li>
+          <li><a href="nagu-saabsan.html">Nagu Saabsan</a></li>
+          <li><a href="nala-soo-xiriir.html">Nala Soo Xiriir</a></li>
+          <li><a href="/register">Isdiiwaangeli</a></li>
+          <li><a href="/login">Gal</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm nav-cta-mobile" href="casharrada.html">Bilow Waxbarashada</a>
+      </nav>
+
+      <a class="btn btn-primary btn-sm nav-cta" href="casharrada.html">Bilow Waxbarashada</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Ogeysiiska maamulaha — waxaa lagu beddelayaa dashboard-ka (/admin) -->
+    <div class="site-announcement" id="siteAnnouncement" hidden>
+      <div class="container"><p id="siteAnnouncementText"></p></div>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <img class="hero-logo" src="assets/img/logo-white.svg" alt="MR.ducaysane — Aqoon Dijitaal ah, Mustaqbal Wanaagsan." width="300" height="60">
+          <span class="badge badge-dark"><span data-icon="zap"></span> Manba waxbarasho oo bilaash ah</span>
+          <h1>Ku Baro <span class="highlight">Xirfadaha Dijitaalka ah</span> Af-Soomaali</h1>
+          <p class="hero-sub">Baro computer-ka, internet-ka, web design iyo xirfadaha ICT adigoo adeegsanaya casharro Af-Soomaali fudud ku qoran.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="casharrada.html"><span data-icon="zap"></span> Bilow Waxbarashada</a>
+            <a class="btn btn-ghost-light btn-lg" href="#hordhac"><span data-icon="play"></span> Daawo Hordhac</a>
+          </div>
+          <ul class="hero-points">
+            <li><span data-icon="checkCircle"></span> 6 qaybood · 18 cashar</li>
+            <li><span data-icon="checkCircle"></span> Imtixaanno firfircoon</li>
+            <li><span data-icon="checkCircle"></span> Ku habboon telefoonka</li>
+          </ul>
+        </div>
+
+        <div class="hero-art">
+          <img src="assets/img/hero.svg" alt="Aragti: laptop-ku wax lagu baranayo, koofiyadda guudasha iyo calaamadda badbaadada" width="640" height="520" fetchpriority="high">
+          <div class="hero-float-card hero-float-1">
+            <span class="ico" data-icon="shield"></span>
+            <span>Badbaado Online<small>Xirfad la xoojiyay</small></span>
+          </div>
+          <div class="hero-float-card hero-float-2">
+            <span class="ico" data-icon="code"></span>
+            <span>Web-Dhis<small>HTML · CSS · JS</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HORDHAC / HOW IT WORKS ==================== -->
+    <section class="section" id="hordhac">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="badge"><span data-icon="info"></span> Sidee ayay u shaqaysaa?</span>
+          <h2>3 tallaabo oo kugu filan bilowga</h2>
+          <p>Ma u baahnid khibrad hore. Keliya qalab internet leh iyo dadaal yar — casharradu way jiraan, Af-Soomaali.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card step-card reveal">
+            <div class="step-num">1</div>
+            <h3>Dooro Qaybta</h3>
+            <p>Aan ka dooro 6 qaybood: computer-ka, internet-ka, badbaadada, HTML, CSS ama JavaScript.</p>
+          </article>
+          <article class="card step-card reveal reveal-delay-1">
+            <div class="step-num">2</div>
+            <h3>Akhri Casharka</h3>
+            <p>Waliba casharku wuxuu leeyahay tusaalooyin fudud iyo tilmaamo tallaabo-tallaabo ah oo Af-Soomaali.</p>
+          </article>
+          <article class="card step-card reveal reveal-delay-2">
+            <div class="step-num">3</div>
+            <h3>Imtixaan</h3>
+            <p>Imtixaan dib-u-eegis ah oo su'aalo badan — jawaabta saxda ah iyo faahfaahinta waa la arki karaa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LEARNING CATEGORIES ==================== -->
+    <section class="section section-alt" id="qaybaha">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="badge"><span data-icon="book"></span> Qaybaha Waxbarashada</span>
+          <h2>Dooro qaybta aad rabto inaad bilowdo</h2>
+          <p>Dhammaan casharrada waxaa ku qoran af Soomaali fudud, kuwaas oo loo qeexay arday bilow ah.</p>
+        </div>
+        <div class="grid grid-3" id="categoryGrid">
+          <!-- Qaybaha waxaa lagu dhisayaa JS: assets/js/content.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DIGITAL SAFETY ==================== -->
+    <section class="section section-dark" id="badbaado">
+      <div class="container">
+        <div class="feature-row">
+          <div class="reveal">
+            <span class="badge badge-dark"><span data-icon="shield"></span> Badbaadada Dijitalada</span>
+            <h2>Xirfadaha badbaadada internet-ka</h2>
+            <p>Internet-ka waa meel wax lagu barto, laakiin waa inaad ogaataa khataraha. Casharrada badbaadada waxay ku barayaan sida aad u ilaaliso naftaada iyo xogtaada.</p>
+            <ul class="feature-list">
+              <li>
+                <span data-icon="key"></span>
+                <div><strong>Furaha sirta ah ee adka</strong><span>Sida loo sameeyo oo loo ilaaliyo eray sirta ah oo adag.</span></div>
+              </li>
+              <li>
+                <span data-icon="mail"></span>
+                <div><strong>Xatooyada xogta (Phishing)</strong><span>Sida loo arko email iyo bogag been abuur ah.</span></div>
+              </li>
+              <li>
+                <span data-icon="alert"></span>
+                <div><strong>Khaladaadka online-ka</strong><span>Sida looga fogaado khiyaamada iyo balanqaadka been abuurka.</span></div>
+              </li>
+              <li>
+                <span data-icon="lock"></span>
+                <div><strong>Xogtaada gaarka ah</strong><span>Maxaa la wadaagi karaa iyo maxaa la qarinayo.</span></div>
+              </li>
+            </ul>
+            <div class="hero-actions" style="margin-top:2rem;margin-bottom:0">
+              <a class="btn btn-primary" href="badbaado.html">Eeg Qaybta Badbaadada <span data-icon="arrowRight"></span></a>
+              <a class="btn btn-ghost-light" href="casharrada.html#safety">Casharrada Badbaadada</a>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <div class="contact-card" style="background:linear-gradient(150deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); border:1px solid rgba(255,255,255,0.14)">
+              <h3><span data-icon="bulb"></span> Xeerarka 3 ee dhakhsaha ah</h3>
+              <p style="color:#C6D8F5">Haddii aad xusuusan karto kaliya saddexdan, aad bay u badbaadsan tahay:</p>
+              <ul class="contact-items">
+                <li><span><span class="ci-icon" data-icon="lock"></span><span><small>1</small> Eray sirta ah oo kala duwan akoon kasta</span></span></li>
+                <li><span><span class="ci-icon" data-icon="mail"></span><span><small>2</small> Ha gujin xiriirarka shaki leh ee email-ka</span></span></li>
+                <li><span><span class="ci-icon" data-icon="eye"></span><span><small>3</small> Ha qaybin xogtaada gaarka ah qof aan aqoon</span></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="stats-row reveal">
+          <div class="stat" style="background:var(--blue-50);border-color:var(--blue-100)">
+            <div class="stat-num" style="color:var(--blue-600)">6</div>
+            <div class="stat-label" style="color:var(--navy-700)">Qaybood Waxbarasho</div>
+          </div>
+          <div class="stat" style="background:var(--blue-50);border-color:var(--blue-100)">
+            <div class="stat-num" style="color:var(--blue-600)">18</div>
+            <div class="stat-label" style="color:var(--navy-700)">Cashar oo buuxa</div>
+          </div>
+          <div class="stat" style="background:var(--blue-50);border-color:var(--blue-100)">
+            <div class="stat-num" style="color:var(--blue-600)">100%</div>
+            <div class="stat-label" style="color:var(--navy-700)">Af-Soomaali</div>
+          </div>
+          <div class="stat" style="background:var(--blue-50);border-color:var(--blue-100)">
+            <div class="stat-num" style="color:var(--blue-600)">0</div>
+            <div class="stat-label" style="color:var(--navy-700)">Lacag · Bilaash</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT CARD ==================== -->
+    <section class="section section-alt" id="xiriir">
+      <div class="container">
+        <div class="feature-row">
+          <div class="reveal">
+            <span class="badge"><span data-icon="mail"></span> Nala Soo Xiriir</span>
+            <h2>Ma haysataa su'aal?</h2>
+            <p class="muted">Haddii aad qabto su'aal ku saabsan casharrada, talo bixin, ama wax aad naga rabto — nala soo xiriir. Waxaan ku faraxsanahay inaan kaa caawino.</p>
+            <p class="muted">Waxaad sidoo kale booqan kartaa <a href="nala-soo-xiriir.html">bogga xiriirka</a> si aad u aragto foomka oo dhan.</p>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <div class="contact-card">
+              <h3>Xiriirka Tooska ah</h3>
+              <p>Mid kasta waxaa riixi karaa si toos ah.</p>
+              <div class="contact-actions">
+                <a class="btn-whatsapp" href="https://wa.me/252657155694" target="_blank" rel="noopener noreferrer" aria-label="Farriin WhatsApp noo dir +252 657155694">
+                  <span data-icon="whatsapp"></span> WhatsApp
+                </a>
+                <a class="btn-email" href="mailto:maxamedmustafe882@gmail.com" aria-label="Email noo dir maxamedmustafe882@gmail.com">
+                  <span data-icon="mail"></span> Dir Email
+                </a>
+              </div>
+              <ul class="contact-items">
+                <li>
+                  <a href="https://wa.me/252657155694" target="_blank" rel="noopener noreferrer" aria-label="Farriin WhatsApp noo dir +252 657155694">
+                    <span class="ci-icon" data-icon="whatsapp"></span>
+                    <span><small>WhatsApp</small> +252 657155694</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:maxamedmustafe882@gmail.com">
+                    <span class="ci-icon" data-icon="mail"></span>
+                    <span><small>Email</small> maxamedmustafe882@gmail.com</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:657155694">
+                    <span class="ci-icon" data-icon="phone"></span>
+                    <span><small>Telefoon</small> 657155694</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img src="assets/img/logo-mark.svg" alt="" width="44" height="44">
+            <span>
+              <span class="brand-name">MR.<span class="accent">ducaysane</span></span>
+              <span class="brand-tag">Aqoon Dijitaal ah, Mustaqbal Wanaagsan.</span>
+            </span>
+          </a>
+          <p class="footer-about">Manba waxbarasho oo bilaash ah oo ku hadla Af-Soomaali — computer-ka, internet-ka, badbaadada dijitalada iyo web-dhiska.</p>
+        </div>
+
+        <div class="footer-col footer-nav">
+          <h4>Liiska Bogagga</h4>
+          <ul>
+            <li><a href="index.html">Bogga Hore</a></li>
+            <li><a href="casharrada.html">Casharrada</a></li>
+            <li><a href="imtixaannada.html">Imtixaannada</a></li>
+            <li><a href="khayraadka.html">Khayraadka</a></li>
+            <li><a href="nagu-saabsan.html">Nagu Saabsan</a></li>
+            <li><a href="nala-soo-xiriir.html">Nala Soo Xiriir</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Qaybaha Waxbarashada</h4>
+          <ul>
+            <li><a href="casharrada.html#computer">Aasaaska Computer-ka</a></li>
+            <li><a href="casharrada.html#internet">Internet-ka iyo Email-ka</a></li>
+            <li><a href="casharrada.html#safety">Badbaadada Internet-ka</a></li>
+            <li><a href="casharrada.html#html">Barashada HTML</a></li>
+            <li><a href="casharrada.html#css">Barashada CSS</a></li>
+            <li><a href="casharrada.html#js">JavaScript aasaasiga ah</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <div class="contact-actions">
+            <a class="btn-whatsapp" href="https://wa.me/252657155694" target="_blank" rel="noopener noreferrer" aria-label="Farriin WhatsApp noo dir +252 657155694">
+              <span data-icon="whatsapp"></span> WhatsApp
+            </a>
+            <a class="btn-email" href="mailto:maxamedmustafe882@gmail.com" aria-label="Email noo dir maxamedmustafe882@gmail.com">
+              <span data-icon="mail"></span> Email
+            </a>
+          </div>
+        
+          <h4>Nala Soo Xiriir</h4>
+          <ul>
+            <li>
+              <span data-icon="mail"></span>
+              <span>
+                <a href="mailto:maxamedmustafe882@gmail.com">maxamedmustafe882@gmail.com</a>
+                <small>Email</small>
+              </span>
+            </li>
+            <li>
+              <span data-icon="phone"></span>
+              <span>
+                <a href="tel:657155694">657155694</a>
+                <small>Telefoon</small>
+              </span>
+            </li>
+            <li>
+              <span data-icon="mapPin"></span>
+              <span>
+                <span style="color:#AFC4E4;font-weight:600;font-size:.95rem">Soomaaliya</span>
+                <small>Waddanka</small>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> MR.ducaysane. Dhammaan xuquuqaha waa la ilaaliyay.</p>
+        <p class="tagline">Aqoon Dijitaal ah, Mustaqbal Wanaagsan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/icons.js"></script>
+  <script src="data/content.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

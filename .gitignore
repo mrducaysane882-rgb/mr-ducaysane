@@ -1,0 +1,14 @@
+# Secrets & server-local files — never commit / never publish
+.env
+server.log
+__pycache__/
+*.pyc
+
+# Local users database (SQLite) — akoonnada isticmaalayaasha
+# (hash PBKDF2 kaliya, laakiin weli sir-midabnimo: git-ignore)
+data/users.db
+data/users.db-*
+data/*.db
+
+# Imtixaanno (test logs + isolated DBs)
+tools/.test-*

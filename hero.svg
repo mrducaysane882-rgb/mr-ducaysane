@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-label="Aragti: arday Soomaali ah oo baranaya xirfadaha dijitaalka ah ee kombiyuutarka iyo web-dhisida">
+  <defs>
+    <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1F44"/>
+      <stop offset="0.6" stop-color="#123A7A"/>
+      <stop offset="1" stop-color="#1D6BF0"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E2A55"/>
+      <stop offset="1" stop-color="#08182F"/>
+    </linearGradient>
+    <linearGradient id="glowCap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7DD3FC"/>
+      <stop offset="1" stop-color="#2E8BFF"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCEBFF"/>
+      <stop offset="1" stop-color="#B9D6FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="520" rx="28" fill="url(#heroBg)"/>
+  <g fill="#FFFFFF" opacity="0.06">
+    <circle cx="70" cy="70" r="3"/><circle cx="150" cy="40" r="2"/><circle cx="560" cy="60" r="3"/>
+    <circle cx="600" cy="150" r="2"/><circle cx="50" cy="200" r="2"/><circle cx="590" cy="330" r="3"/>
+    <circle cx="90" cy="420" r="2"/><circle cx="520" cy="440" r="2"/>
+  </g>
+
+  <!-- connection nodes -->
+  <g stroke="#7DD3FC" stroke-width="2" opacity="0.5" fill="none">
+    <path d="M92 150 L170 118 M170 118 L238 150 M470 108 L548 140 M540 380 L592 420 M86 350 L40 400"/>
+  </g>
+  <g fill="#7DD3FC" opacity="0.9">
+    <circle cx="92" cy="150" r="6"/><circle cx="170" cy="118" r="8"/><circle cx="238" cy="150" r="6"/>
+    <circle cx="470" cy="108" r="7"/><circle cx="548" cy="140" r="5"/>
+    <circle cx="540" cy="380" r="6"/><circle cx="592" cy="420" r="8"/>
+    <circle cx="86" cy="350" r="5"/><circle cx="40" cy="400" r="7"/>
+  </g>
+
+  <!-- laptop -->
+  <g>
+    <rect x="196" y="150" width="248" height="176" rx="14" fill="#F4F8FF"/>
+    <rect x="208" y="162" width="224" height="152" rx="8" fill="url(#screen)"/>
+    <g font-family="Consolas, Menlo, monospace" font-size="15">
+      <text x="222" y="188" fill="#7DD3FC">&lt;html&gt;</text>
+      <text x="236" y="212" fill="#9FD0FF">&lt;h1&gt;Soomaali&lt;/h1&gt;</text>
+      <text x="236" y="236" fill="#FFD580">&lt;p&gt;Baro web-dhiska&lt;/p&gt;</text>
+      <text x="222" y="260" fill="#7DD3FC">&lt;/html&gt;</text>
+      <rect x="222" y="276" width="10" height="18" rx="2" fill="#38BDF8"/>
+      <rect x="240" y="280" width="86" height="10" rx="5" fill="#28456F"/>
+    </g>
+    <path d="M170 326h300l22 30a8 8 0 0 1-7 12H155a8 8 0 0 1-7-12l22-30Z" fill="url(#floor)"/>
+    <rect x="286" y="338" width="68" height="8" rx="4" fill="#8FB6E8"/>
+  </g>
+
+  <!-- graduation cap floating -->
+  <g transform="translate(430,208) rotate(12)">
+    <path d="M0 22 62 0 124 22 62 44Z" fill="#FFFFFF"/>
+    <path d="M32 34v22c0 5 14 11 30 11s30-6 30-11V34L62 46 32 34Z" fill="#DCEBFF"/>
+    <path d="M116 25v22" stroke="url(#glowCap)" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="116" cy="54" r="7" fill="#38BDF8"/>
+  </g>
+
+  <!-- shield badge -->
+  <g transform="translate(112,236)">
+    <path d="M40 0 76 13v30c0 22-16 34-36 42C20 77 4 65 4 43V13L40 0Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M40 8 68 18v25c0 17-12 27-28 33C24 70 12 60 12 43V18L40 8Z" fill="#1D6BF0"/>
+    <path d="M27 42l10 10 20-22" stroke="#FFFFFF" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- floating code chip -->
+  <g transform="translate(466,330) rotate(-8)">
+    <rect width="104" height="52" rx="12" fill="#FFFFFF" opacity="0.95"/>
+    <text x="20" y="34" font-family="Consolas, Menlo, monospace" font-size="22" font-weight="700" fill="#123A7A">&lt;/&gt;</text>
+    <circle cx="82" cy="26" r="9" fill="#38BDF8"/>
+  </g>
+
+  <!-- floor shadow -->
+  <ellipse cx="320" cy="452" rx="220" ry="20" fill="#06122A" opacity="0.35"/>
+</svg>

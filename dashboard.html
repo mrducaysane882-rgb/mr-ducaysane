@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Maamulaha MR.ducaysane</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A1F44">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="auth-body">
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="/index.html" aria-label="MR.ducaysane — Bogga Hore">
+        <img src="/assets/img/logo-mark.svg" alt="" width="44" height="44">
+        <span>
+          <span class="brand-name">MR.<span class="accent">ducaysane</span></span>
+          <span class="brand-tag">Dashboard-ka Maamulaha</span>
+        </span>
+      </a>
+      <div class="admin-bar-actions">
+        <a class="btn btn-sm btn-ghost" href="/index.html" target="_blank" rel="noopener">
+          <span data-icon="play"></span> Eeg Website-ka
+        </a>
+        <form method="post" action="/admin/logout" id="logoutForm">
+          <button class="btn btn-sm btn-primary" type="submit">
+            <span data-icon="lock"></span> Ka Bax (Logout)
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="admin-main">
+    <input type="hidden" id="adminCsrf" value="{{CSRF_TOKEN}}">
+    <div class="container">
+      <div class="admin-head">
+        <span class="badge"><span data-icon="shield"></span> Masternimada (admin)</span>
+        <h1>Dashboard-ka Maamulaha</h1>
+        <p>Halkan waxaad ku arki kartaa xaaladda website-kaa oo waxaad ka beddeli kartaa qaybaha ilaaliyay.</p>
+      </div>
+
+      <div class="admin-grid">
+        <!-- Status -->
+        <section class="card admin-card" aria-labelledby="statusTitle">
+          <h2 id="statusTitle"><span data-icon="checkCircle"></span> Xaaladda Guud</h2>
+          <dl class="admin-facts">
+            <div><dt>Email-ka Maamulaha</dt><dd>{{ADMIN_EMAIL}}</dd></div>
+            <div><dt>Muddada Isku-dhafka (session)</dt><dd>{{SESSION_TTL}} daqiiqo</dd></div>
+            <div><dt>Kiyaha Badbaadada</dt><dd>PBKDF2-SHA256 · server-side session</dd></div>
+          </dl>
+          <p class="admin-hint"><span data-icon="info"></span> Cookie-gaagu waa HttpOnly — borowzarka kaliya ayaa ihi, JavaScript-gu mooyaane.</p>
+        </section>
+
+        <!-- Protected content -->
+        <section class="card admin-card admin-card-wide" aria-labelledby="annTitle">
+          <h2 id="annTitle"><span data-icon="alert"></span> Ogeysiiska Bogga Hore</h2>
+          <p>Ku qor qoraal kooban (max 500 xaraf) oo dadweynaha u muuqda Bogga Hore. Banan = ogeysiis la qariyay.</p>
+          <form id="announceForm">
+            <div class="form-group">
+              <label for="annText">Qoraalka Ogeysiiska</label>
+              <textarea class="form-control" id="annText" name="text" rows="3" maxlength="500"
+                        placeholder="Tusaale: Casharro cusub ayaa la ku daray today!">{{ANNOUNCEMENT_TEXT}}</textarea>
+            </div>
+            <div class="admin-actions">
+              <button class="btn btn-primary" type="submit"><span data-icon="checkCircle"></span> Kaydi (Save)</button>
+              <span class="ann-count" id="annCount" aria-live="polite"></span>
+            </div>
+          </form>
+          <div class="form-status" id="adminStatus" role="status" aria-live="polite"></div>
+        </section>
+
+        <!-- Isticmaalayaasha diiwaangashan ( database ) -->
+        <section class="card admin-card admin-card-wide" aria-labelledby="usersTitle">
+          <h2 id="usersTitle"><span data-icon="users"></span> Isticmaalayaasha Diiwaangashan</h2>
+          <p id="usersSummary" class="admin-hint"><span data-icon="info"></span> Waxaan akhrinayaa database-ka…</p>
+
+          <div class="admin-tools">
+            <input class="form-control" type="search" id="userSearch"
+                   placeholder="Raadi magac ama email…" aria-label="Raadi isticmaale" maxlength="100">
+            <select class="form-control" id="userSort" aria-label="Jarriidda liiska">
+              <option value="joined_desc">Diiwaangelada: ugu dambeysa</option>
+              <option value="joined_asc">Diiwaangelada: ugu horreysa</option>
+              <option value="name_asc">Magaca: A → Z</option>
+              <option value="name_desc">Magaca: Z → A</option>
+              <option value="email_asc">Email: A → Z</option>
+            </select>
+            <select class="form-control" id="userPerPage" aria-label="Tirada bog kasta">
+              <option value="10">10 / bog</option>
+              <option value="25">25 / bog</option>
+              <option value="50">50 / bog</option>
+            </select>
+          </div>
+
+          <div class="table-wrap">
+            <table class="admin-table" id="usersTable" hidden>
+              <thead>
+                <tr><th scope="col">#</th><th scope="col">ID</th><th scope="col">Magaca</th><th scope="col">Email</th><th scope="col">Diiwaangelada</th><th scope="col">Xaalad</th><th scope="col">Ficil</th></tr>
+              </thead>
+              <tbody id="usersBody"></tbody>
+            </table>
+          </div>
+
+          <div class="admin-pager" id="usersPager" hidden>
+            <button class="btn btn-outline btn-sm" type="button" id="userPrev"><span data-icon="arrowLeft"></span> Hore</button>
+            <span id="userPageInfo" aria-live="polite"></span>
+            <button class="btn btn-outline btn-sm" type="button" id="userNext">Danbe <span data-icon="arrowRight"></span></button>
+          </div>
+
+          <div id="userDetail" class="user-detail" hidden></div>
+        </section>
+
+        <!-- Fariimaha xiriirka (foomka bogga xiriirka) -->
+        <section class="card admin-card admin-card-wide" aria-labelledby="msgTitle">
+          <h2 id="msgTitle"><span data-icon="mail"></span> Fariimaha Xiriirka</h2>
+          <div id="messagesList" class="msg-list" aria-live="polite">
+            <p class="admin-hint">Waan akhrinayaa…</p>
+          </div>
+          <div class="admin-actions">
+            <button class="btn btn-outline btn-sm" type="button" id="clearMsgs" hidden>
+              <span data-icon="alert"></span> Tirtir Dhammaan
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <section class="card admin-card admin-links" aria-labelledby="linksTitle">
+        <h2 id="linksTitle"><span data-icon="book"></span> Bogagga Dadweynaha</h2>
+        <ul class="admin-link-list">
+          <li><a href="/index.html" target="_blank" rel="noopener">Bogga Hore</a></li>
+          <li><a href="/casharrada.html" target="_blank" rel="noopener">Casharrada</a></li>
+          <li><a href="/imtixaannada.html" target="_blank" rel="noopener">Imtixaannada</a></li>
+          <li><a href="/nala-soo-xiriir.html" target="_blank" rel="noopener">Nala Soo Xiriir</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="/assets/js/icons.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/admin-dashboard.js"></script>
+</body>
+</html>
